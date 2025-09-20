@@ -1,0 +1,107 @@
+{
+  "abi": [
+    {
+      "inputs": [{"internalType": "address", "name": "_stakingToken", "type": "address"}],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "internalType": "uint256", "name": "marketId", "type": "uint256"},
+        {"indexed": true, "internalType": "address", "name": "marketAddress", "type": "address"},
+        {"indexed": false, "internalType": "string", "name": "question", "type": "string"},
+        {"indexed": false, "internalType": "uint256", "name": "endTime", "type": "uint256"},
+        {"indexed": true, "internalType": "address", "name": "creator", "type": "address"}
+      ],
+      "name": "MarketCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {"indexed": true, "internalType": "uint256", "name": "marketId", "type": "uint256"},
+        {"indexed": true, "internalType": "address", "name": "marketAddress", "type": "address"},
+        {"indexed": false, "internalType": "bool", "name": "outcome", "type": "bool"}
+      ],
+      "name": "MarketResolved",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {"internalType": "string", "name": "question", "type": "string"},
+        {"internalType": "uint256", "name": "duration", "type": "uint256"}
+      ],
+      "name": "createMarket",
+      "outputs": [{"internalType": "uint256", "name": "marketId", "type": "uint256"}],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllMarkets",
+      "outputs": [
+        {
+          "components": [
+            {"internalType": "address", "name": "marketAddress", "type": "address"},
+            {"internalType": "string", "name": "question", "type": "string"},
+            {"internalType": "uint256", "name": "endTime", "type": "uint256"},
+            {"internalType": "address", "name": "creator", "type": "address"},
+            {"internalType": "bool", "name": "resolved", "type": "bool"},
+            {"internalType": "uint256", "name": "totalStake", "type": "uint256"}
+          ],
+          "internalType": "struct MarketFactory.MarketInfo[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [{"internalType": "uint256", "name": "marketId", "type": "uint256"}],
+      "name": "getMarket",
+      "outputs": [
+        {
+          "components": [
+            {"internalType": "address", "name": "marketAddress", "type": "address"},
+            {"internalType": "string", "name": "question", "type": "string"},
+            {"internalType": "uint256", "name": "endTime", "type": "uint256"},
+            {"internalType": "address", "name": "creator", "type": "address"},
+            {"internalType": "bool", "name": "resolved", "type": "bool"},
+            {"internalType": "uint256", "name": "totalStake", "type": "uint256"}
+          ],
+          "internalType": "struct MarketFactory.MarketInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marketCount",
+      "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {"internalType": "uint256", "name": "marketId", "type": "uint256"},
+        {"internalType": "bool", "name": "outcome", "type": "bool"}
+      ],
+      "name": "resolveMarket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stakingToken",
+      "outputs": [{"internalType": "contract IERC20", "name": "", "type": "address"}],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}

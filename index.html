@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PredictMarket - Decentralized Prediction Markets</title>
+    <meta name="description" content="Stake on future outcomes with crypto. Create markets, make predictions, and earn rewards through decentralized market wisdom.">
+    
+    <!-- Darkify integration for theme toggle -->
+    <script>
+      window.Darkify = {
+        init: function() {
+          // Simple theme toggle implementation
+          const theme = localStorage.getItem('theme') || 'light';
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        }
+      };
+    </script>
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#8B5CF6" />
+    <meta name="msapplication-TileColor" content="#8B5CF6" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
